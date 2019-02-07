@@ -7,7 +7,7 @@ VAT Bundle
 ![Total Downloads](https://img.shields.io/packagist/dt/ibericode/vat-bundle.svg)
 ![License](https://img.shields.io/github/license/ibericode/vat-bundle.svg)
 
-This bundle allows you to use [vat.php](https://github.com/ibericode/vat-bundle) in your Symfony4 projects.
+This bundle allows you to use [ibericode/vat](https://github.com/ibericode/vat) in your Symfony4 projects.
 
 vat.php is a simple PHP library which helps you to deal with European VAT rules. It helps you...
 
@@ -37,7 +37,7 @@ Ibericode\VatBundle\VatBundle::class => ['all' => true]
 
 ## Usage
 
-Check out [vat.php](https://github.com/ibericode/vat-bundle) for direct usage examples. This bundle adds service configuration & a validation constraints for VAT numbers.
+Check out [ibericode/vat](https://github.com/ibericode/vat) for direct usage examples. This bundle adds service configuration & a validation constraint for VAT numbers.
 
 ### Dependency injection
 
@@ -74,4 +74,4 @@ class Customer
 
 ## License
 
-MIT license. See the [LICENSE](LICENSE) file for details.
+MIT licensed. See the [LICENSE](LICENSE) file for details.
