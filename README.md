@@ -1,7 +1,13 @@
 VAT Bundle
 ==========
 
-This bundle allows you to use [vat.php](https://github.com/dannyvankooten/vat.php) in your Symfony4 projects.
+[![Build Status](https://img.shields.io/travis/ibericode/vat-bundle.svg)](https://travis-ci.org/ibericode/vat-bundle)
+[![Latest Stable Version](https://img.shields.io/packagist/v/ibericode/vat-bundle.svg)](https://packagist.org/packages/ibericode/vat-bundle)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/ibericode/vat-bundle.svg)
+![Total Downloads](https://img.shields.io/packagist/dt/ibericode/vat-bundle.svg)
+![License](https://img.shields.io/github/license/ibericode/vat-bundle.svg)
+
+This bundle allows you to use [vat.php](https://github.com/ibericode/vat-bundle) in your Symfony4 projects.
 
 vat.php is a simple PHP library which helps you to deal with European VAT rules. It helps you...
 
@@ -31,7 +37,7 @@ Ibericode\VatBundle\VatBundle::class => ['all' => true]
 
 ## Usage
 
-Check out [vat.php](https://github.com/dannyvankooten/vat.php) for direct usage examples. This bundle adds service configuration & a validation constraints for VAT numbers.
+Check out [vat.php](https://github.com/ibericode/vat-bundle) for direct usage examples. This bundle adds service configuration & a validation constraints for VAT numbers.
 
 ### Dependency injection
 
