@@ -34,7 +34,8 @@ class VatNumberValidator extends ConstraintValidator
             $valid = $validator->validate($value);
         } catch (ViesException $e) {
             // ignore VIES VAT exceptions (when the service is down)
-            // this could mean that an invalid VAT number enters our database, but it's better than a hard-error
+            // this could mean that an unexisting VAT number passes validation,
+            // but it's (probably) better than a hard-error
             $valid = true;
         }
 
