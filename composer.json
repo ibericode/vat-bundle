@@ -1,6 +1,7 @@
 {
     "name": "ibericode/vat-bundle",
     "description": "Bundle for using vat.php in a Symfony environment",
+    "keywords": ["vat"],
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {

@@ -47,10 +47,11 @@ With this bundle enabled, you can use dependency injection to retrieve a class i
 use DvK\Vat\Countries;
 use DvK\Vat\Validator;
 
-class MyController {
+class MyController 
+{
     public function __construct(Countries $countries, Validator $validator)
     {
-        
+        // This works because this bundle registers the classes as Symfony services
     }
 }
 ```
@@ -73,4 +74,4 @@ class Customer
 
 ## License
 
-MIT 
+MIT license. See the [LICENSE](LICENSE) file for details.
