@@ -1,7 +1,7 @@
 <?php
-namespace Dvk\VatBundle;
+namespace Ibericode\VatBundle;
 
-use Dvk\VatBundle\DependencyInjection\VatExtension;
+use Ibericode\VatBundle\DependencyInjection\VatExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class VatBundle extends Bundle

@@ -1,5 +1,5 @@
 {
-    "name": "dannyvankooten/vat-bundle",
+    "name": "ibericode/vat-bundle",
     "description": "Bundle for using vat.php in a Symfony environment",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dvk\\VatBundle\\": "src/"
+            "Ibericode\\VatBundle\\": "src/"
         }
     },
     "authors": [

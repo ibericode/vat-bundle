@@ -1,6 +1,6 @@
 <?php
 
-namespace Dvk\VatBundle\DependencyInjection;
+namespace Ibericode\VatBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;

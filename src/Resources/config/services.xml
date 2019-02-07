@@ -5,15 +5,15 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="dvk_vat.countries" class="DvK\Vat\Countries" />
-        <service id="dvk_vat.validator" class="DvK\Vat\Validator" />
-        <service id="dvk_vat.rates" class="DvK\Vat\Rates\Rates">
+        <service id="ibericode_vat.countries" class="DvK\Vat\Countries" />
+        <service id="ibericode_vat.validator" class="DvK\Vat\Validator" />
+        <service id="ibericode_vat.rates" class="DvK\Vat\Rates\Rates">
             <argument key="$cache" type="service" id="cache.app.simple" />
         </service>
 
         <!-- autowiring class names -->
-        <service id="DvK\Vat\Countries" alias="dvk_vat.countries" />
-        <service id="DvK\Vat\Validator" alias="dvk_vat.validator" />
-        <service id="DvK\Vat\Rates\Rates" alias="dvk_vat.rates" />
+        <service id="DvK\Vat\Countries" alias="ibericode_vat.countries" />
+        <service id="DvK\Vat\Validator" alias="ibericode_vat.validator" />
+        <service id="DvK\Vat\Rates\Rates" alias="ibericode_vat.rates" />
     </services>
 </container>

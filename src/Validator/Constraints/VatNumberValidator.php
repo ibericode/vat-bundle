@@ -1,6 +1,6 @@
 <?php
 
-namespace Dvk\VatBundle\Validator\Constraints;
+namespace Ibericode\VatBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;

@@ -15,31 +15,46 @@ vat.php is a simple PHP library which helps you to deal with European VAT rules.
 The library uses jsonvat.com to obtain its data for the VAT rates. Full details can be seen [here](https://github.com/adamcooke/vat-rates).
 For VAT number validation, it uses [VIES VAT number validation](http://ec.europa.eu/taxation_customs/vies/).
 
-### Installation
+## Installation
+
+First, install the bundle using Composer.
 
 ```
-composer require dannyvankooten/vat-bundle
+composer require ibericode/vat-bundle
 ```
 
-### Usage
+Then, load the bundle by adding it to your `config/bundles.php` file.
 
-Check out [vat.php](https://github.com/dannyvankooten/vat.php) for direct usage examples. The `Countries` and `Validator` class can be auto-wired.
+```php
+Ibericode\VatBundle\VatBundle::class => ['all' => true]
+```
+
+## Usage
+
+Check out [vat.php](https://github.com/dannyvankooten/vat.php) for direct usage examples. This bundle adds service configuration & a validation constraints for VAT numbers.
+
+### Dependency injection
+
+With this bundle enabled, you can use dependency injection to retrieve a class instance for the `Countries`, `Validator` or `Rates` classes.
 
 ```php
 use DvK\Vat\Countries;
 use DvK\Vat\Validator;
 
-
-
-
+class MyController {
+    public function __construct(Countries $countries, Validator $validator)
+    {
+        
+    }
+}
 ```
 
-##### Validation
+### Validation
 
-To validate a VatNumber using Symfony's [Validation](https://symfony.com/doc/current/validation.html) component, you can use the `VatNumber` constraint.
+To validate a VAT number using Symfony's [Validation](https://symfony.com/doc/current/validation.html) component, you can use the `VatNumber` constraint.
 
 ```php
-use Dvk\VatBundle\Validator\Constraints\VatNumber;
+use Ibericode\VatBundle\Validator\Constraints\VatNumber;
 
 class Customer 
 {
@@ -50,5 +65,6 @@ class Customer
 }
 ```
 
-### License
-MIT
+## License
+
+MIT 
