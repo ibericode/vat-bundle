@@ -7,8 +7,8 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
-use DvK\Vat\Validator;
-use DvK\Vat\Vies\ViesException;
+use Ibericode\Vat\Validator;
+use Ibericode\Vat\Vies\ViesException;
 
 class VatNumberValidator extends ConstraintValidator
 {
@@ -31,7 +31,7 @@ class VatNumberValidator extends ConstraintValidator
         // let DvK\Vat\Validator take care of validating the VAT number value
         $validator = new Validator();
         try {
-            $valid = $validator->validate($value);
+            $valid = $validator->validateVatNumber($value);
         } catch (ViesException $e) {
             // ignore VIES VAT exceptions (when the service is down)
             // this could mean that an unexisting VAT number passes validation,

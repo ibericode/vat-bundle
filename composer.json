@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.1",
-        "dannyvankooten/vat.php": "^1.2",
+        "dannyvankooten/vat.php": "2.0.x-dev",
         "symfony/framework-bundle": "^4.0",
         "symfony/validator": "^4.2"
     },
@@ -28,5 +28,12 @@
             "name": "Danny van Kooten",
             "email": "dannyvankooten@gmail.com"
         }
-    ]
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/home/danny/Code/php/vat/"
+        }
+    ],
+    "minimum-stability": "dev"
 }

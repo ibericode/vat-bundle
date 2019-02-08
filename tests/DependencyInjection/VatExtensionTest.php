@@ -2,9 +2,9 @@
 
 namespace Ibericode\VatBundle\Tests\DependencyInjection;
 
-use DvK\Vat\Countries;
-use DvK\Vat\Rates\Rates;
-use DvK\Vat\Validator;
+use Ibericode\Vat\Countries;
+use Ibericode\Vat\Rates;
+use Ibericode\Vat\Validator;
 use Ibericode\VatBundle\DependencyInjection\VatExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use PHPUnit\Framework\TestCase;

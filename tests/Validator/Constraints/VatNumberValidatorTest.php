@@ -4,9 +4,6 @@ namespace Ibericode\VatBundle\Tests\Validator\Constraints;
 
 use Ibericode\VatBundle\Validator\Constraints\VatNumber;
 use Ibericode\VatBundle\Validator\Constraints\VatNumberValidator;
-
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class VatNumberValidatorTest extends ConstraintValidatorTestCase
