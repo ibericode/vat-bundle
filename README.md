@@ -28,7 +28,7 @@ composer require ibericode/vat-bundle
 Then, load the bundle by adding it to your `config/bundles.php` file.
 
 ```php
-Ibericode\VatBundle\VatBundle::class => ['all' => true]
+Ibericode\Vat\Bundle\VatBundle::class => ['all' => true]
 ```
 
 ## Usage
@@ -37,17 +37,30 @@ Check out [ibericode/vat](https://github.com/ibericode/vat) for direct usage exa
 
 ### Dependency injection
 
-With this bundle enabled, you can use dependency injection to retrieve a class instance for the `Countries`, `Validator` or `Rates` classes.
+With this bundle enabled, you can use dependency injection to retrieve a class instance for the `Countries`, `Validator`, `Rates` or `Geolocator` classes.
 
 ```php
-use DvK\Vat\Countries;
-use DvK\Vat\Validator;
+use Ibericode\Vat\Countries;
+use Ibericode\Vat\Validator;
+use Ibericode\Vat\Rates;
+use Ibericode\Vat\Geolocator;
 
 class MyController 
 {
-    public function __construct(Countries $countries, Validator $validator)
+    /**
+     * Type-hint the class on your service constructors to retrieve a class instance
+     */
+    public function __construct(
+        Rates $rates, 
+        Validator $validator,
+        Countries $countries, 
+        Geolocator $geolocator
+        )
     {
-        // This works because this bundle registers the classes as Symfony services
+        $rates->getRateForCountry('NL'); // 21.00
+        $validator->validateVatNumber('NL123456789B01'); // false
+        $countries->isCountryCodeInEU('US') // false
+        $geolocator->locateIpAddress('8.8.8.8'); // US
     }
 }
 ```
@@ -57,7 +70,7 @@ class MyController
 To validate a VAT number using Symfony's [Validation](https://symfony.com/doc/current/validation.html) component, you can use the `VatNumber` constraint.
 
 ```php
-use Ibericode\VatBundle\Validator\Constraints\VatNumber;
+use Ibericode\Vat\Bundle\Validator\Constraints\VatNumber;
 
 class Customer 
 {
