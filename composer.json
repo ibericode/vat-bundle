@@ -1,6 +1,6 @@
 {
     "name": "ibericode/vat-bundle",
-    "description": "Bundle for using vat.php in a Symfony environment",
+    "description": "Bundle for using ibericode/vat in a Symfony environment",
     "keywords": ["vat"],
     "type": "symfony-bundle",
     "license": "MIT",
@@ -15,12 +15,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Ibericode\\VatBundle\\": "src/"
+            "Ibericode\\Vat\\Bundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ibericode\\VatBundle\\Tests\\": "tests/"
+            "Ibericode\\Vat\\Bundle\\Tests\\": "tests/"
         }
     },
     "authors": [

@@ -1,9 +1,9 @@
 <?php
 
-namespace Ibericode\VatBundle\Tests\Validator\Constraints;
+namespace Ibericode\Vat\Bundle\Tests\Validator\Constraints;
 
-use Ibericode\VatBundle\Validator\Constraints\VatNumber;
-use Ibericode\VatBundle\Validator\Constraints\VatNumberValidator;
+use Ibericode\Vat\Bundle\Validator\Constraints\VatNumber;
+use Ibericode\Vat\Bundle\Validator\Constraints\VatNumberValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class VatNumberValidatorTest extends ConstraintValidatorTestCase

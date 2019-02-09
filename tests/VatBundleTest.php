@@ -1,9 +1,9 @@
 <?php
 
-namespace Ibericode\VatBundle\Tests\DependencyInjection;
+namespace Ibericode\Vat\Bundle\Tests\DependencyInjection;
 
-use Ibericode\VatBundle\DependencyInjection\VatExtension;
-use Ibericode\VatBundle\VatBundle;
+use Ibericode\Vat\Bundle\DependencyInjection\VatExtension;
+use Ibericode\Vat\Bundle\VatBundle;
 
 use PHPUnit\Framework\TestCase;
 

@@ -1,10 +1,9 @@
 <?php
-namespace Ibericode\VatBundle;
+namespace Ibericode\Vat\Bundle;
 
-use Ibericode\VatBundle\DependencyInjection\VatExtension;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Ibericode\Vat\Bundle\DependencyInjection\VatExtension; 
 
-class VatBundle extends Bundle
+class VatBundle extends \Symfony\Component\HttpKernel\Bundle\Bundle
 {
     public function getContainerExtension()
     {
