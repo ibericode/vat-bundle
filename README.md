@@ -9,17 +9,13 @@ VAT Bundle
 
 This bundle allows you to use [ibericode/vat](https://github.com/ibericode/vat) in your Symfony4 projects.
 
-vat.php is a simple PHP library which helps you to deal with European VAT rules. It helps you...
-
-- Fetch (historical) VAT rates for any European member state
-- Validate VAT numbers (by format, existence or both)
+- Fetch VAT rates for any European member state from [ibericode/vat-rates](https://github.com/ibericode/vat-rates)
+- Validate VAT numbers (by format and existence)
 - Validate ISO-3316 alpha-2 country codes
 - Determine whether a country is part of the EU
 - Geo-locate IP addresses
 
-
-The library uses jsonvat.com to obtain its data for the VAT rates. Full details can be seen [here](https://github.com/adamcooke/vat-rates).
-For VAT number validation, it uses [VIES VAT number validation](http://ec.europa.eu/taxation_customs/vies/).
+The official [VIES VAT number validation](http://ec.europa.eu/taxation_customs/vies/) SOAP API is used for validating VAT numbers.
 
 ## Installation
 
