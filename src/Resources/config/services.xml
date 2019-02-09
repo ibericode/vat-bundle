@@ -8,12 +8,14 @@
         <service id="ibericode_vat.countries" class="Ibericode\Vat\Countries" />
         <service id="ibericode_vat.validator" class="Ibericode\Vat\Validator" />
         <service id="ibericode_vat.rates" class="Ibericode\Vat\Rates">
-            <argument key="$cache" type="service" id="cache.app.simple" />
+            <argument key="$storageDir">%kernel.project_dir%/var/vat-rates</argument>
         </service>
+        <service id="ibericode_vat.geolocator" class="Ibericode\Vat\Geolocator" />
 
         <!-- autowiring class names -->
         <service id="Ibericode\Vat\Countries" alias="ibericode_vat.countries" />
         <service id="Ibericode\Vat\Validator" alias="ibericode_vat.validator" />
         <service id="Ibericode\Vat\Rates" alias="ibericode_vat.rates" />
+        <service id="Ibericode\Vat\Geolocator" alias="ibericode_vat.geolocator" />
     </services>
 </container>
