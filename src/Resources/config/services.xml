@@ -5,6 +5,8 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
         <parameter key="ibericode_vat.rates.storage_path">%kernel.project_dir%/var/vat-rates</parameter>
+        <parameter key="ibericode_vat.rates.ttl">86400</parameter>
+        <parameter key="ibericode_vat.geolocator.service">ip2c.org</parameter>
     </parameters>
 
     <services>
@@ -12,8 +14,11 @@
         <service id="ibericode_vat.validator" class="Ibericode\Vat\Validator" />
         <service id="ibericode_vat.rates" class="Ibericode\Vat\Rates">
             <argument key="$storagePath">%ibericode_vat.rates.storage_path%</argument>
+            <argument key="$ttl">%ibericode_vat.rates.ttl%</argument>
         </service>
-        <service id="ibericode_vat.geolocator" class="Ibericode\Vat\Geolocator" />
+        <service id="ibericode_vat.geolocator" class="Ibericode\Vat\Geolocator">
+            <argument key="$service">%ibericode_vat.geolocator.service%</argument>
+        </service>
 
         <!-- autowiring class names -->
         <service id="Ibericode\Vat\Countries" alias="ibericode_vat.countries" />
