@@ -14,7 +14,7 @@
         <service id="ibericode_vat.validator" class="Ibericode\Vat\Validator" />
         <service id="ibericode_vat.rates" class="Ibericode\Vat\Rates">
             <argument key="$storagePath">%ibericode_vat.rates.storage_path%</argument>
-            <argument key="$ttl">%ibericode_vat.rates.ttl%</argument>
+            <argument key="$refreshInterval">%ibericode_vat.rates.ttl%</argument>
         </service>
         <service id="ibericode_vat.geolocator" class="Ibericode\Vat\Geolocator">
             <argument key="$service">%ibericode_vat.geolocator.service%</argument>
