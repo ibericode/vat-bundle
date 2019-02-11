@@ -3,6 +3,7 @@
 namespace Ibericode\Vat\Bundle\Tests\DependencyInjection;
 
 use Ibericode\Vat\Countries;
+use Ibericode\Vat\Geolocator;
 use Ibericode\Vat\Rates;
 use Ibericode\Vat\Validator;
 use Ibericode\Vat\Bundle\DependencyInjection\VatExtension;
@@ -19,9 +20,11 @@ class VatExtensionTest extends TestCase
         $this->assertTrue($container->hasDefinition('ibericode_vat.countries'));
         $this->assertTrue($container->hasDefinition('ibericode_vat.rates'));
         $this->assertTrue($container->hasDefinition('ibericode_vat.validator'));
+        $this->assertTrue($container->hasDefinition('ibericode_vat.geolocator'));
 
         $this->assertTrue($container->has(Countries::class), 'Countries class is wired');
         $this->assertTrue($container->has(Rates::class), 'Rates class is wired');
         $this->assertTrue($container->has(Validator::class), 'Validator class is wired');
+        $this->assertTrue($container->has(Geolocator::class), 'Geolocator class is wired');
     }
 }
