@@ -43,6 +43,7 @@ class VatNumberValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($value, $constraint);
         $this->buildViolation('myMessage')
             ->setParameter('{{ string }}', $value)
+            ->setCode('59421d43-d474-489c-b18c-7701329d51a0')
             ->assertRaised();
     }
 
