@@ -42,6 +42,7 @@ class VatNumberValidator extends ConstraintValidator
         if (false === $valid) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ string }}', $value)
+                ->setCode(VatNumber::INVALID_ERROR_CODE)
                 ->addViolation();
         }
     }
