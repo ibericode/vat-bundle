@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraint;
 /**
  * @Annotation
  */
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
 class VatNumber extends Constraint
 {
     public const INVALID_ERROR_CODE = '59421d43-d474-489c-b18c-7701329d51a0';
