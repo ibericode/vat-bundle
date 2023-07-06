@@ -7,7 +7,7 @@ VAT Bundle
 ![Total Downloads](https://img.shields.io/packagist/dt/ibericode/vat-bundle.svg)
 ![License](https://img.shields.io/github/license/ibericode/vat-bundle.svg)
 
-This bundle allows you to use [ibericode/vat](https://github.com/ibericode/vat) in your Symfony4 projects.
+This bundle allows you to use [ibericode/vat](https://github.com/ibericode/vat) in your [Symfony](https://symfony.com/) projects.
 
 - Fetch VAT rates for any European member state from [ibericode/vat-rates](https://github.com/ibericode/vat-rates)
 - Validate VAT numbers (by format and existence)
