@@ -1,7 +1,7 @@
 VAT Bundle
 ==========
 
-[![Build Status](https://img.shields.io/travis/ibericode/vat-bundle.svg)](https://travis-ci.org/ibericode/vat-bundle)
+[![Build Status](https://github.com/ibericode/vat-bundle/actions/workflows/php.yml/badge.svg)](https://github.com/ibericode/vat-bundle/actions/runs/5474441948)
 [![Latest Stable Version](https://img.shields.io/packagist/v/ibericode/vat-bundle.svg)](https://packagist.org/packages/ibericode/vat-bundle)
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/ibericode/vat-bundle.svg)
 ![Total Downloads](https://img.shields.io/packagist/dt/ibericode/vat-bundle.svg)
