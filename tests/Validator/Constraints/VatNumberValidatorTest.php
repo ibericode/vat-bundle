@@ -47,7 +47,7 @@ class VatNumberValidatorTest extends ConstraintValidatorTestCase
             ->assertRaised();
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
        return [
            ['NL123'],
