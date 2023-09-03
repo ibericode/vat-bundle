@@ -12,7 +12,7 @@ use Ibericode\Vat\Vies\ViesException;
 
 class VatNumberValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint) : void
     {
         if (!$constraint instanceof VatNumber) {
             throw new UnexpectedTypeException($constraint, VatNumber::class);
