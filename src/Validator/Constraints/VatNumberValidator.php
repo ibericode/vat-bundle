@@ -29,13 +29,17 @@ class VatNumberValidator extends ConstraintValidator
         }
 
         $validator = new Validator();
-        try {
-            $valid = $validator->validateVatNumber($value);
-        } catch (ViesException $e) {
-            // ignore VIES VAT exceptions (when the service is down)
-            // this could mean that an unexisting VAT number passes validation,
-            // but it's (probably) better than a hard-error
-            $valid = true;
+        if ($constraint->checkExistence) {
+            try {
+                $valid = $validator->validateVatNumber($value);
+            } catch (ViesException $e) {
+                // ignore VIES VAT exceptions (when the service is down)
+                // this could mean that an unexisting VAT number passes validation,
+                // but it's (probably) better than a hard-error
+                $valid = true;
+            }
+        } else {
+            $valid = $validator->validateVatNumberFormat($value);
         }
 
         if (false === $valid) {
