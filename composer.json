@@ -11,6 +11,8 @@
         "symfony/validator": "^5.4|^6.0"
     },
     "require-dev": {
+        "ext-intl": "*",
+        "ext-soap": "*",
         "phpunit/phpunit": "^10.0"
     },
     "autoload": {
