@@ -19,8 +19,8 @@
         <service id="ibericode_vat.geolocator" class="Ibericode\Vat\Geolocator">
             <argument key="$service">%ibericode_vat.geolocator.service%</argument>
         </service>
-        <service id="Ibericode\Vat\Bundle\Validator\Constraints\VatNumberValidator">
-            <argument key="$validator">%ibericode_vat.validator%</argument>
+        <service id="ibericode_vat.validator.vat_number_validator" class="Ibericode\Vat\Bundle\Validator\Constraints\VatNumberValidator">
+            <argument key="$validator" type="service" id="ibericode_vat.validator"/>
         </service>
 
         <!-- autowiring class names -->
@@ -28,5 +28,6 @@
         <service id="Ibericode\Vat\Validator" alias="ibericode_vat.validator" />
         <service id="Ibericode\Vat\Rates" alias="ibericode_vat.rates" />
         <service id="Ibericode\Vat\Geolocator" alias="ibericode_vat.geolocator" />
+        <service id="Ibericode\Vat\Bundle\Validator\Constraints\VatNumberValidator" alias="ibericode_vat.validator.vat_number_validator" />
     </services>
 </container>
