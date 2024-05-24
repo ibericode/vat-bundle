@@ -4,12 +4,13 @@ namespace Ibericode\Vat\Bundle\Tests\Validator\Constraints;
 
 use Ibericode\Vat\Bundle\Validator\Constraints\VatNumber;
 use Ibericode\Vat\Bundle\Validator\Constraints\VatNumberValidator;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class VatNumberValidatorTest extends ConstraintValidatorTestCase
 {
 
-    protected function createValidator()
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return new VatNumberValidator();
     }
