@@ -28,5 +28,8 @@
             "name": "Danny van Kooten",
             "email": "danny@ibericode.com"
         }
-    ]
+    ],
+    "scripts": {
+        "check-syntax": "find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l"
+    }
 }
