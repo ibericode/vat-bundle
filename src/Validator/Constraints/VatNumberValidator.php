@@ -12,6 +12,10 @@ use Ibericode\Vat\Vies\ViesException;
 
 class VatNumberValidator extends ConstraintValidator
 {
+    public function __construct(private Validator $validator = new Validator())
+    {
+    }
+
     public function validate(mixed $value, Constraint $constraint) : void
     {
         if (!$constraint instanceof VatNumber) {
@@ -28,10 +32,9 @@ class VatNumberValidator extends ConstraintValidator
             throw new UnexpectedValueException($value, 'string');
         }
 
-        $validator = new Validator();
         if ($constraint->checkExistence) {
             try {
-                $valid = $validator->validateVatNumber($value);
+                $valid = $this->validator->validateVatNumber($value);
             } catch (ViesException $e) {
                 // ignore VIES VAT exceptions (when the service is down)
                 // this could mean that an unexisting VAT number passes validation,
@@ -39,7 +42,7 @@ class VatNumberValidator extends ConstraintValidator
                 $valid = true;
             }
         } else {
-            $valid = $validator->validateVatNumberFormat($value);
+            $valid = $this->validator->validateVatNumberFormat($value);
         }
 
         if (false === $valid) {
