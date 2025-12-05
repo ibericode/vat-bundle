@@ -36,6 +36,14 @@ class VatNumberValidator extends ConstraintValidator
             try {
                 $valid = $this->validator->validateVatNumber($value);
             } catch (ViesException $e) {
+                if ($constraint->violateOnException) {
+                    $this->context->buildViolation($constraint->exceptionMessage)
+                        ->setCode(VatNumber::VIES_EXCEPTION_ERROR_CODE)
+                        ->addViolation();
+
+                    return;
+                }
+
                 // ignore VIES VAT exceptions (when the service is down)
                 // this could mean that an unexisting VAT number passes validation,
                 // but it's (probably) better than a hard-error
