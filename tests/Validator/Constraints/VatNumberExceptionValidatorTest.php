@@ -32,9 +32,8 @@ class VatNumberExceptionValidatorTest extends ConstraintValidatorTestCase
 
     public function testViesExceptionError()
     {
-        $constraint = new VatNumber([
-            'violateOnException' => true,
-        ]);
+        $constraint = new VatNumber();
+        $constraint->violateOnException = true;
         $this->validator->validate('IE6388047V', $constraint);
         $this->buildViolation('An error occurred while checking VAT number, please try again later')
             ->setCode('a1be6ee0-f27e-4d51-a132-f0a753c0b01e')

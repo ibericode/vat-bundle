@@ -38,9 +38,8 @@ class VatNumberValidatorTest extends ConstraintValidatorTestCase
      */
     public function testInvalidValues($value)
     {
-        $constraint = new VatNumber([
-            'message' => 'myMessage',
-        ]);
+        $constraint = new VatNumber();
+        $constraint->message = 'myMessage';
         $this->validator->validate($value, $constraint);
         $this->buildViolation('myMessage')
             ->setParameter('{{ string }}', $value)
@@ -50,13 +49,9 @@ class VatNumberValidatorTest extends ConstraintValidatorTestCase
 
     public static function getInvalidValues()
     {
-       return [
+        return [
            ['NL123'],
            ['DE500'],
-       ];
+        ];
     }
-
-
-
-
 }
