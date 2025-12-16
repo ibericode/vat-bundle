@@ -1,11 +1,7 @@
 parameters:
-  ibericode_vat:
-    rates:
-      storage_path: '%kernel.project_dir%/var/vat-rates'
-      ttl: 86400
-    geolocator:
-      service: 'ip2c.org'
-
+    ibericode_vat.rates.storage_path: '%kernel.project_dir%/var/vat-rates'
+    ibericode_vat.rates.ttl: 86400
+    ibericode_vat.geolocator.service: 'ip2c.org'
 
 services:
   ibericode_vat.countries:
