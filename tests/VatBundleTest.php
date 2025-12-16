@@ -14,6 +14,4 @@ class VatBundleTest extends TestCase
         $bundle = new VatBundle();
         $this->assertInstanceOf(VatExtension::class, $bundle->getContainerExtension());
     }
-
-
 }

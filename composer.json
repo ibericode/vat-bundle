@@ -8,7 +8,8 @@
         "php": ">=8.2",
         "ibericode/vat": "^2.1",
         "symfony/framework-bundle": "^7.0|^8.0",
-        "symfony/validator": "^7.0|^8.0"
+        "symfony/validator": "^7.0|^8.0",
+        "symfony/yaml": "^8.0"
     },
     "require-dev": {
         "ext-intl": "*",
