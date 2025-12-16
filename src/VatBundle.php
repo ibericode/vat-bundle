@@ -1,13 +1,15 @@
 <?php
 namespace Ibericode\Vat\Bundle;
 
-use Ibericode\Vat\Bundle\DependencyInjection\VatExtension;
-use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class VatBundle extends \Symfony\Component\HttpKernel\Bundle\Bundle
+class VatBundle extends AbstractBundle
 {
-    public function getContainerExtension() : ?ExtensionInterface
+
+    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        return new VatExtension();
+        $container->import('../config.services.yaml');
     }
 }
