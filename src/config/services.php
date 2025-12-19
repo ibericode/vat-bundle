@@ -1,7 +1,5 @@
 <?php
 
-
-// config/services.php
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 use Ibericode\Vat\Countries;
@@ -32,7 +30,6 @@ return function (ContainerConfigurator $container): void {
         ->args([
             '$validator' => service('ibericode_vat.validator')
         ]);
-
 
     $services->alias(Countries::class, 'ibericode_vat.countries');
     $services->alias(Rates::class, 'ibericode_vat.rates');
