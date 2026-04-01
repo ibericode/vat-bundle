@@ -23,9 +23,8 @@ class VatNumberExceptionValidatorTest extends ConstraintValidatorTestCase
 
     public function testViesExceptionValid()
     {
-        $constraint = new VatNumber([
-            'violateOnException' => false,
-        ]);
+        $constraint = new VatNumber();
+        $constraint->violateOnException = false;
         $this->validator->validate('IE6388047V', $constraint);
         $this->assertNoViolation();
     }

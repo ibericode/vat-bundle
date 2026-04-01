@@ -15,4 +15,12 @@ class VatNumber extends Constraint
 
     public bool $checkExistence = true;
     public bool $violateOnException = false;
+
+    #[HasNamedArguments]
+    public function __construct(?string $message = null, ?array $groups = null, mixed $payload = null)
+    {
+        parent::__construct(null, $groups, $payload);
+
+        $this->message = $message ?? $this->message;
+    }
 }
