@@ -3,6 +3,7 @@
 namespace Ibericode\Vat\Bundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\Exception\InvalidArgumentException;
 
 #[\Attribute(\Attribute::TARGET_PROPERTY)]
 class VatNumber extends Constraint
@@ -16,11 +17,16 @@ class VatNumber extends Constraint
     public bool $checkExistence = true;
     public bool $violateOnException = false;
 
-    #[HasNamedArguments]
-    public function __construct(?string $message = null, ?array $groups = null, mixed $payload = null)
+    public function __construct(?array $options = null, ?string $message = null, ?array $groups = null, mixed $payload = null, ?bool $checkExistence = null, ?bool $violateOnException = null)
     {
+        if (null !== $options) {
+            throw new InvalidArgumentException(\sprintf('Passing an array of options to configure the "%s" constraint is no longer supported.', static::class));
+        }
+
         parent::__construct(null, $groups, $payload);
 
         $this->message = $message ?? $this->message;
+        $this->checkExistence = $checkExistence ?? $this->checkExistence;
+        $this->violateOnException = $violateOnException ?? $this->violateOnException;
     }
 }
