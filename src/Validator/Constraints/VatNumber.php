@@ -17,12 +17,8 @@ class VatNumber extends Constraint
     public bool $checkExistence = true;
     public bool $violateOnException = false;
 
-    public function __construct(?array $options = null, ?string $message = null, ?array $groups = null, mixed $payload = null, ?bool $checkExistence = null, ?bool $violateOnException = null)
+    public function __construct(?string $message = null, ?array $groups = null, mixed $payload = null, ?bool $checkExistence = null, ?bool $violateOnException = null)
     {
-        if (null !== $options) {
-            throw new InvalidArgumentException(\sprintf('Passing an array of options to configure the "%s" constraint is no longer supported.', static::class));
-        }
-
         parent::__construct(null, $groups, $payload);
 
         $this->message = $message ?? $this->message;
